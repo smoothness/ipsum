@@ -26,5 +26,19 @@ const { title = 'Ipsum Costa Rica', description = 'Ipsum Costa Rica' } = Astro.p
 		<Header />
 		<slot />
 		<Footer />
+		<script is:inline>
+			if ('IntersectionObserver' in window) {
+				const io = new IntersectionObserver((entries) => {
+					for (const e of entries) {
+						if (e.isIntersecting) {
+							e.target.classList.add('is-revealed');
+							io.unobserve(e.target);
+						}
+					}
+				}, { rootMargin: '-40% 0px -20% 0px' });
+
+				document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
+			}
+		</script>
 	</body>
 </html>
