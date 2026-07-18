@@ -1,0 +1,74 @@
+---
+const requisitos = [
+	'Tener constituido un núcleo familiar (con excepción de los adultos mayores o personas con discapacidad que pueden aplicar solos).',
+	'No haber recibido un Bono de Vivienda con anterioridad.',
+	'No tener propiedades a su nombre (excepto el lote donde se va a construir, en caso de la modalidad de lote propio o mejoras).',
+];
+
+const procesos = [
+	{
+		numero: '1.',
+		titulo: 'Estudio y Asesoría Inicial:',
+		descripcion:
+			'Realizamos un análisis de tu perfil solicitando información básica (cédulas, ingresos, ubicación, propiedades, etc.) para orientarte sobre cuál modalidad aplicar.',
+	},
+	{
+		numero: '2.',
+		titulo: 'Visita Técnica Gratuita:',
+		descripcion:
+			'Si ya cuentas con un lote, nuestros ingenieros realizarán una visita (sin costo) para verificar que el terreno sea apto para la construcción o la vivienda para sus mejoras.',
+	},
+	{
+		numero: '3.',
+		titulo: 'Gestión Total:',
+		descripcion:
+			'Nuestros analistas recopilan los documentos para conformar un expediente legal y técnico e ingresarlo a la entidad bancaria para que este pueda ser tramitado. Una vez gestionado permisos ante el Colegio de Ingenieros (CFIA) y la Municipalidad. El cliente solo debe preocuparse por realizar los pagos administrativos correspondientes (avalúo, pólizas, permisos municipales y gastos de formalización y fiscalización ante la entidad bancaria).',
+	},
+];
+---
+
+<section id="contacto" class="flex min-h-dvh flex-col bg-primary text-white">
+	<div class="flex min-h-[inherit] w-full items-center justify-center px-6 sm:px-8 lg:px-12">
+		<div class="mx-auto grid w-full max-w-[1440px] items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,24rem)] lg:gap-12">
+		<div class="relative">
+			<div class="pointer-events-none absolute inset-x-0 -top-10 h-[18px] border-r-[18px] border-t-[18px] border-secondary"></div>
+			<h2 class="text-[clamp(1.75rem,2vw,2.25rem)] font-bold uppercase text-secondary">
+				CUÁLES SON LOS REQUISITOS GENERALES DEL BANHVI
+			</h2>
+			<p class="mt-6 text-[20px] font-medium text-white/95">
+				Para optar por cualquiera de los beneficios, el Estado estipula los siguientes requisitos básicos:
+			</p>
+			<ul class="mt-8 space-y-4 list-disc pl-5 text-sm">
+				{requisitos.map((requisito) => (
+					<li class="font-medium text-white/95">
+						{requisito}
+					</li>
+				))}
+			</ul>
+		</div>
+
+		<!-- Columna central: Proceso -->
+		<div class="space-y-8">
+			<ul class="mt-8 space-y-4 list-disc pl-5 text-sm">
+			{procesos.map((proceso) => (
+					<li class="font-medium text-white">
+						<span class="font-bold">{proceso.numero} {proceso.titulo}</span>{' '}
+						{proceso.descripcion}
+					</li>
+			))}
+			</ul>	
+		</div>
+
+		<!-- Columna derecha: Imagen -->
+		<div class="relative hidden lg:block">
+			<img
+				class="aspect-[0.86] w-full object-cover object-center"
+				src="/home/ipsum-panel-3.jpg"
+				alt="Planos arquitectónicos con herramientas de dibujo"
+				loading="lazy"
+				decoding="async"
+			/>
+		</div>
+	</div>
+	</div>
+</section>

@@ -1,0 +1,72 @@
+---
+import Button from '../ui/Button.astro';
+
+const modalidades = [
+	{
+		title: 'BONO - CRÉDITO',
+		subtitle: '(MODALIDAD MIXTA)',
+		description:
+			'Esta es una solución integral que combina un subsidio estatal con un crédito bancario, permitiendo a la familia acceder a una vivienda de mayor valor o realizar mejoras de alto alcance.',
+		image: '/home/ipsum-panel-2-a.jpg',
+	},
+	{
+		title: 'CONSTRUCCIÓN EN LOTE PROPIO',
+		description:
+			'Para familias que ya dieron el primer paso de tener su terreno y ahora buscan materializar la construcción de su hogar.',
+		image: '/home/ipsum-panel-2-b.jpg',
+	},
+	{
+		title: 'REMODELACIÓN, AMPLIACIÓN O MEJORAS (RAMT)',
+		description:
+			'Dirigido a quienes ya poseen una vivienda, pero requieren optimizar sus espacios, reparar daños, ampliar el área construida o terminar la vivienda.',
+		image: '/home/ipsum-panel-2-c.jpg',
+	},
+	{
+		title: 'COMPRA Y CONSTRUCCIÓN DE LOTE',
+		subtitle: '(ARTÍCULO 59)',
+		description:
+			'Diseñado específicamente para familias de recursos limitados que no califican para créditos bancarios, pero que mantienen independencia financiera para sus gastos básicos.',
+		image: '/home/ipsum-panel-2-d.jpg',
+	},
+];
+---
+
+<section id="requisitos" class="flex min-h-dvh flex-col bg-white text-zinc-900">
+	<div class="flex min-h-[inherit] w-full items-center justify-center px-6 sm:px-8 lg:px-12">
+		<div class="mx-auto w-full max-w-[1440px]">
+		<h2 class="mb-16 text-center text-[clamp(2rem,2.5vw,2.5rem)] uppercase text-primary">
+			SERVICIOS Y MODALIDADES DE BONO
+		</h2>
+
+		<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+			{modalidades.map((modalidad) => (
+				<div class="flex flex-col">
+					<img
+						class="aspect-[1.1] w-full object-cover object-center"
+						src={modalidad.image}
+						alt={`Casa moderna - ${modalidad.title}`}
+						loading="lazy"
+						decoding="async"
+					/>
+					<div class="mt-6 flex flex-1 flex-col">
+						<h4 class="text-center text-[clamp(1.25rem,1.5vw,1.5rem)] text-primary">
+							{modalidad.title}
+							{modalidad.subtitle && (
+							<span class="block text-body/70 text-md">
+									{modalidad.subtitle}
+								</span>
+							)}
+						</h4>
+						<p class="mb-10 mt-5 flex-1 font-md font-medium text-body">
+							{modalidad.description}
+						</p>
+						<Button href="#" variant="secondary" size="sm" class="mt-auto self-center">
+							CONOCER MÁS
+						</Button>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+	</div>
+</section>

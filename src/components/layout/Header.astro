@@ -1,0 +1,46 @@
+---
+import { InstagramIcon, WhatsAppIcon } from '../react/AntDesignIcons';
+import BrandMark from '../home/BrandMark.astro';
+
+const navigationItems = [
+	{ label: '¿QUIÉNES SOMOS?', href: '#quienes-somos' },
+	{ label: 'MODALIDADES', href: '#modalidades' },
+	{ label: 'REQUISITOS', href: '#requisitos' },
+	{ label: 'CONTÁCTENOS', href: '#contacto' },
+];
+
+const navLinkClass =
+	'text-[0.95rem] font-bold uppercase text-white no-underline drop-shadow-[0_2px_16px_rgba(8,92,240,0.35)] transition-opacity duration-200 hover:opacity-70 focus-visible:opacity-70 max-[720px]:text-[0.82rem]';
+
+const socialLinkClass =
+	'inline-grid size-8 place-items-center rounded-full bg-white/92 shadow-[0_10px_22px_rgba(8,92,240,0.18)] transition duration-200 hover:-translate-y-px hover:opacity-85 focus-visible:-translate-y-px focus-visible:opacity-85';
+
+const socialIconClass = 'size-[1.25rem] text-primary';
+---
+
+<header class="absolute inset-x-0 top-0 z-20 py-[1.8rem] max-[1080px]:pt-5">
+	<div class="mx-auto grid w-[min(96rem,calc(100%-3rem))] grid-cols-[auto_1fr_auto] items-center gap-6 max-[1080px]:grid-cols-1 max-[1080px]:justify-items-center max-[720px]:w-[min(96rem,calc(100%-1.5rem))]">
+		<a class="inline-flex items-center" href="/" aria-label="Ipsum Costa Rica">
+			<BrandMark compact alt="Ipsum Costa Rica" />
+		</a>
+
+		<nav aria-label="Principal">
+			<ul class="m-0 flex list-none flex-wrap justify-center gap-x-[clamp(1.25rem,2vw,3rem)] gap-y-4 p-0 max-[1080px]:gap-x-6">
+				{navigationItems.map((item) => (
+					<li>
+						<a class={navLinkClass} href={item.href}>{item.label}</a>
+					</li>
+				))}
+			</ul>
+		</nav>
+
+		<div class="flex items-center gap-3" aria-label="Redes sociales">
+			<a class={socialLinkClass} href="#" aria-label="Instagram">
+				<InstagramIcon className={socialIconClass} />
+			</a>
+			<a class={socialLinkClass} href="#" aria-label="WhatsApp">
+				<WhatsAppIcon className={socialIconClass} />
+			</a>
+		</div>
+	</div>
+</header>

@@ -1,0 +1,30 @@
+---
+interface Props {
+	compact?: boolean;
+	className?: string;
+	sizeClass?: string;
+	alt?: string;
+	priority?: boolean;
+}
+
+const {
+	compact = false,
+	className = '',
+	sizeClass,
+	alt = 'Ipsum Costa Rica',
+	priority = false,
+} = Astro.props;
+---
+
+<img
+	class:list={[
+		'block h-auto',
+		compact ? 'w-[clamp(7.75rem,10vw,11rem)]' : sizeClass ?? 'w-full max-w-[26rem]',
+		className,
+	]}
+	src="/ipsum-logo.svg"
+	alt={alt}
+	decoding="async"
+	loading="eager"
+	fetchpriority={priority ? 'high' : undefined}
+/>

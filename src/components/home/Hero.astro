@@ -1,0 +1,38 @@
+---
+import BrandMark from './BrandMark.astro';
+import { ChevronDownIcon } from '../react/AntDesignIcons';
+import Button from '../ui/Button.astro';
+---
+
+<section
+	class="relative h-dvh overflow-clip bg-[radial-gradient(circle_at_72%_32%,rgba(255,255,255,0.28),transparent_30%),linear-gradient(180deg,var(--color-primary)_0%,var(--color-primary-mid)_30%,var(--color-primary-soft)_68%,var(--color-surface)_100%)] before:pointer-events-none before:absolute before:inset-0 before:bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] before:bg-[length:82px_82px] before:opacity-65 before:content-[''] after:pointer-events-none after:absolute after:inset-0 after:bg-[linear-gradient(180deg,rgba(255,255,255,0)_56%,rgba(255,255,255,0.9)_100%)] after:content-[''] max-[720px]:before:bg-[length:52px_52px]"
+	aria-labelledby="hero-heading"
+>
+	<div class="relative z-[1] mx-auto grid h-full w-full max-w-[1440px] grid-cols-[minmax(0,38rem)_1fr] items-center gap-8 px-6 pb-28 pt-[8.35rem] sm:px-8 lg:px-12 lg:py-28 max-[1080px]:grid-cols-1 max-[1080px]:justify-items-start max-[720px]:pb-[7.5rem] max-[720px]:pt-44">
+		<div class="relative z-[2] mt-8 max-w-[560px] translate-x-[clamp(2rem,9vw,17rem)] max-[1080px]:max-w-[560px] max-[1080px]:translate-x-0">
+			<h1 id="hero-heading" class="sr-only">Ipsum Costa Rica</h1>
+			<BrandMark alt="Ipsum Costa Rica" priority sizeClass="w-full max-w-[560px]" />
+			<p class="subtitle mt-6 max-w-[560px] text-balance text-[24px] text-white drop-shadow-[0_14px_34px_rgba(8,92,240,0.28)]" id="quienes-somos">
+				Somos una empresa dedicada a la construcción, gestión y diseño de obras civiles
+				integrales, promoviendo edificaciones sostenibles y de alta calidad.
+			</p>
+			<p class="mt-[1.55rem] max-w-[560px] text-[20px] font-semibold text-white/92">
+				Con un enfoque que va dirigido hacia la vivienda unifamiliar de bien social,
+				brindando a las familias costarricenses espacios dignos y seguros.
+			</p>
+			<Button href="#contacto" size="md" class="mt-[1.95rem] min-w-[13rem] max-[720px]:w-full max-[720px]:max-w-[20rem]">
+				COMIENZA HOY MISMO
+			</Button>
+		</div>
+
+		<div class="hero-blueprint-art pointer-events-none absolute inset-y-0 right-[-11rem] top-0 flex w-[min(70vw,75rem)] items-center justify-end opacity-[0.58] mix-blend-screen [filter:drop-shadow(0_8px_40px_rgba(255,255,255,0.08))] [-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0.95)_8%,rgba(0,0,0,0.9)_74%,transparent_100%)] [mask-image:linear-gradient(180deg,rgba(0,0,0,0.95)_8%,rgba(0,0,0,0.9)_74%,transparent_100%)] max-[1080px]:right-[-14rem] max-[1080px]:top-32 max-[1080px]:w-[min(92vw,58rem)] max-[1080px]:opacity-[0.34] max-[720px]:right-[-17rem] max-[720px]:top-48 max-[720px]:w-[min(130vw,42rem)] max-[720px]:opacity-[0.22]" aria-hidden="true">
+			<img class="hero-blueprint-image h-auto w-full" src="/hero-blueprint.svg" alt="" loading="eager" fetchpriority="high" />
+		</div>
+	</div>
+
+	<a class="absolute bottom-[2.6rem] left-1/2 z-[2] inline-flex -translate-x-1/2 flex-col items-center gap-[0.95rem] no-underline" href="#modalidades" aria-label="Ir al siguiente contenido">
+		<span class="hero-scroll-pulse inline-grid size-12 place-items-center rounded-full bg-primary shadow-[0_16px_36px_rgba(8,92,240,0.28)]">
+			<ChevronDownIcon className="size-[1.35rem] text-white" />
+		</span>
+	</a>
+</section>

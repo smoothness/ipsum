@@ -1,11 +1,21 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import Hero from '../components/home/Hero.astro';
+import Panel1 from '../components/home/Panel1.astro';
+import Panel2 from '../components/home/Panel2.astro';
+import Panel3 from '../components/home/Panel3.astro';
+import Panel4 from '../components/home/Panel4.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+	title="Ipsum Costa Rica | Construcción, gestión y diseño"
+	description="Empresa dedicada a la construcción, gestión y diseño de obras civiles integrales en Costa Rica."
+>
+	<main>
+		<Hero />
+		<Panel1 />
+		<Panel2 />
+		<Panel3 />
+		<Panel4 />
+	</main>
 </Layout>

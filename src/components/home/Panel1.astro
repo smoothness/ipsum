@@ -1,0 +1,71 @@
+---
+const benefits = [
+	{
+		title: 'Gestión Total:',
+		description:
+			'Nos ocupamos de los trámites legales, permisos municipales y la dirección técnica de la obra.',
+	},
+	{
+		title: 'Calidad y Durabilidad:',
+		description:
+			'Nos ocupamos de los trámites legales, permisos municipales y la dirección técnica de la obra.',
+	},
+	{
+		title: 'Hogares Sostenibles:',
+		description:
+			'Diseños con alta eficiencia energética y lumínica que aprovechan la luz natural y reducen tu consumo eléctrico.',
+	},
+];
+---
+
+<section id="modalidades" class="flex min-h-dvh flex-col bg-white text-zinc-900">
+	<div class="flex min-h-[inherit] w-full items-center justify-center px-6 sm:px-8 lg:px-12">
+		<div class="mx-auto grid w-full max-w-[1440px] items-center gap-14 lg:grid-cols-[minmax(0,25.5rem)_minmax(0,1fr)] lg:gap-16">
+		<div class="relative mx-auto w-full max-w-[26rem] lg:mx-0">
+			<div class="pointer-events-none absolute inset-x-0 top-0 h-[18px] border-r-[18px] border-t-[18px] border-primary"></div>
+			<img
+				class="mt-8 aspect-[0.86] w-full object-cover object-center"
+				src="/home/ipsum-panel-1.jpg"
+				alt="Casa moderna de varios niveles construida por Ipsum"
+				loading="lazy"
+				decoding="async"
+			/>
+		</div>
+
+		<div class="max-w-[58rem]">
+			<h2 class="max-w-[42rem] text-[clamp(2rem,2.5vw,2.5rem)] uppercase text-primary">
+				Construimos tu hogar con el modelo "llave en mano"
+			</h2>
+			<p class="mt-7 max-w-[50rem] text-[20px] font-medium text-body">
+				En Constructora IPSUM nos encargamos de todo el proceso para que tú solo te
+				preocupes por recibir las llaves de tu casa. Somos especialistas autorizados en la
+				gestión de Bonos de Vivienda ante el Sistema Nacional para la Vivienda.
+			</p>
+
+			<h3 class="mt-14 text-[clamp(1.75rem,2vw,2rem)] uppercase text-primary">
+				¿Por qué elegirnos?
+			</h3>
+			<div class="mt-8 grid gap-8 md:grid-cols-3 md:gap-0 md:divide-x md:divide-primary/80">
+				{benefits.map((benefit, index) => (
+					<div class:list={[
+						'max-w-[19rem] md:pr-6 lg:max-w-none lg:pr-10',
+						index > 0 && 'md:pl-6 lg:pl-10',
+					]}>
+						<h4 class="text-[clamp(1.25rem,1.5vw,1.5rem)] text-primary">
+							{benefit.title}
+						</h4>
+						<p class="mt-5 text-[18px] font-medium text-body">
+							{benefit.description}
+						</p>
+					</div>
+				))}
+			</div>
+
+			<p class="mt-14 max-w-[56rem] text-[20px] font-medium text-body">
+				Tu casa para toda la vida, sin complicaciones. Cumplimos con todos los estándares
+				normativos y ambientales para darte la tranquilidad que mereces.
+			</p>
+		</div>
+	</div>
+	</div>
+</section>

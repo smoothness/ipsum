@@ -1,0 +1,28 @@
+---
+import { InstagramIcon, WhatsAppIcon } from '../react/AntDesignIcons';
+
+const socialLinkClass =
+	'inline-grid size-9 place-items-center rounded-full bg-white/92 transition duration-200 hover:-translate-y-px hover:opacity-85 focus-visible:-translate-y-px focus-visible:opacity-85';
+
+const socialIconClass = 'size-5 text-primary';
+---
+
+<footer class="bg-primary py-20">
+	<div class="mx-auto flex w-[min(96rem,calc(100%-3rem))] items-center justify-between max-[720px]:w-[min(96rem,calc(100%-1.5rem))] max-[720px]:flex-col max-[720px]:gap-4 max-[720px]:text-center">
+		<div class="flex items-center gap-4">
+			<img src="/ipsum-logo.svg" alt="Ipsum Costa Rica" class="h-8 w-auto" />
+			<div class="text-white/90 text-[0.78rem] font-medium uppercase">
+				IPSUM COSTA RICA ©2026<br />ALL RIGHTS RESERVED
+			</div>
+		</div>
+
+		<div class="flex items-center gap-3" aria-label="Redes sociales">
+			<a class={socialLinkClass} href="#" aria-label="Instagram">
+				<InstagramIcon className={socialIconClass} />
+			</a>
+			<a class={socialLinkClass} href="#" aria-label="WhatsApp">
+				<WhatsAppIcon className={socialIconClass} />
+			</a>
+		</div>
+	</div>
+</footer>

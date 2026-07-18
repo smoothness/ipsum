@@ -1,0 +1,77 @@
+---
+import Button from '../ui/Button.astro';
+import { PhoneIcon, MailIcon, EnvironmentIcon } from '../react/AntDesignIcons';
+
+const contactInfo = [
+	{
+		icon: PhoneIcon,
+		text: '(506) 4035 -7370',
+	},
+	{
+		icon: MailIcon,
+		text: 'info@ipsumcr.com',
+	},
+	{
+		icon: EnvironmentIcon,
+		text: 'Oficina Central: San José, Costa Rica.',
+	},
+];
+---
+
+<section class="flex min-h-dvh flex-col bg-white text-zinc-900">
+	<div class="flex min-h-[inherit] w-full items-center justify-center px-6 sm:px-8 lg:px-12">
+		<div class="mx-auto w-full max-w-[1440px]">
+		<div class="relative">
+<div class="pointer-events-none absolute inset-x-0 -top-8 h-[18px] border-r-[18px] border-t-[18px] border-primary w-[232px] xl:w-[294px]"></div>
+			<h2 class="mb-12 text-[clamp(2rem,2.5vw,2.5rem)] font-bold uppercase text-primary">
+				CONTÁCTENOS
+			</h2>
+		</div>
+
+		<div class="grid gap-12 lg:grid-cols-2 lg:gap-16">
+			<!-- Form -->
+			<form class="space-y-6">
+				<input
+					type="text"
+					name="nombre"
+					placeholder="Nombre"
+					class="w-full rounded-lg border border-zinc-300 px-5 py-4 text-[18px] font-medium text-zinc-800 placeholder:text-zinc-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+				/>
+				<input
+					type="tel"
+					name="telefono"
+					placeholder="Teléfono"
+					class="w-full rounded-lg border border-zinc-300 px-5 py-4 text-[18px] font-medium text-zinc-800 placeholder:text-zinc-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+				/>
+				<input
+					type="email"
+					name="email"
+					placeholder="Email"
+					class="w-full rounded-lg border border-zinc-300 px-5 py-4 text-[18px] font-medium text-zinc-800 placeholder:text-zinc-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+				/>
+				<textarea
+					name="mensaje"
+					placeholder="Mensaje"
+					rows={6}
+					class="w-full resize-none rounded-lg border border-zinc-300 px-5 py-4 text-[18px] font-medium text-zinc-800 placeholder:text-zinc-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+				></textarea>
+				<Button type="submit" variant="primary" size="md" class="float-right">
+					ENVIAR
+				</Button>
+			</form>
+
+			<!-- Contact info -->
+			<div class="flex flex-col justify-end space-y-6 lg:items-end">
+				{contactInfo.map((item) => (
+					<div class="flex items-center gap-4">
+						<item.icon className="size-6 text-zinc-600" />
+						<p class="text-[20px] font-medium text-zinc-800">
+							{item.text}
+						</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+	</div>
+</section>
